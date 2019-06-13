@@ -2,62 +2,79 @@
 <html lang="en-us">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Rock Paper Scissors Part 2
-  </title>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors Part 2
+    </title>
 </head>
 
 <body>
 
-  <div id="game">
+    <div id="game"></div>
 
-  </div>
-
-  <div id="wins"></div>
-  <div id="losses"></div>
-  <div id="ties"></div>
-
-  <script type="text/javascript">
-
-    // Creates an array that lists out all of the options the computer could choose.
-    var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-    let numberOfLosses = 0;
-    let numberOfWins = 0;
-
-    // TODO: Give the user directions. 
-    // var text = document.getElementById("game");
-    // text.textContent = "Press 'r', 'p', or 's' to play.";
-
-    //code number of guesses remaining
-    //code for loop to reset game after tries run out
-    //log user guess and coputer guess for each round
-
- 
+    <div id="guesses"></div>
+    <div id="wins"></div>
+    <div id="losses"></div>
 
 
-    // This function is run whenever the user presses a key.
-    document.onkeyup = function (event) {
-      // Determines which key was pressed.
-      var userGuess = event.key;
-      // Randomly chooses a choice from the options array. This is the Computer's guess.
-      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    <script type="text/javascript">
 
-      if (userGuess !== computerGuess) {
-          numberOfLosses++;
-          alert("You got lost.");
-          console.log("Number of Losses " + numberOfLosses);
-        } 
+        // Creates an array that lists out all of the options the computer could choose.
+        var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        let numberOfLosses = 0;
+        let numberOfWins = 0;
+        let numberOfGuesses = 15;
 
-        if (userGuess === computerGuess) {
-          numberOfWins++;
-          alert("You got won.");
-          console.log("Number of Wins " + numberOfWins);
-        } 
-       
+        // TODO: Give the user directions. 
+        var text = document.getElementById("game");
+        text.textContent = "Are you smarter than an Intel Processor? <br> Guess the character the computer guesses to win.";
+
+        
+        //code for loop to reset game after tries run out
+        //log user guess and coputer guess for each round
 
 
-    };
-  </script>
+
+
+        // This function is run whenever the user presses a key.
+        document.onkeyup = function (event) {
+            // Determines which key was pressed.
+            var userGuess = event.key;
+            // Randomly chooses a choice from the options array. This is the Computer's guess.
+            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            
+
+            if (userGuess !== computerGuess) {
+                numberOfLosses++;
+                numberOfGuesses--;
+                alert("You got lost.");
+                console.log("Number of Losses " + numberOfLosses);
+                var losses = document.getElementById("losses");
+                losses.textContent = "Number of Losses: " + numberOfLosses;
+                var guesses = document.getElementById("guesses");
+                guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
+                if(numberOfGuesses === 0){
+
+                }
+            }
+
+            if (userGuess === computerGuess) {
+                numberOfWins++;
+                numberOfGuesses--;
+                alert("You got won.");
+                console.log("Number of Wins " + numberOfWins);
+                var wins = document.getElementById("wins");
+                wins.textContent = "Number of Wins: " + numberOfWins;
+                var guesses = document.getElementById("guesses");
+                guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
+                if(numberOfGuesses === 0){
+                    
+                }
+            }
+
+
+
+        };
+    </script>
 
 </body>
 
