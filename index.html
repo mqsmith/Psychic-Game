@@ -3,17 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Rock Paper Scissors Part 2
+    <title>Beat the Intel.
     </title>
 </head>
 
 <body>
 
-    <div id="game"></div>
+    <div id="game">
+        <h1>Are you smarter than an Intel Processor?</h1>
+        <h2>Guess the letter the computer guesses.</h2>
+        <h3>Pick a letter on your keyboard to start!</h3>
 
-    <div id="guesses"></div>
-    <div id="wins"></div>
-    <div id="losses"></div>
+    </div>
+
+    <div id="guesses">
+        Number of Guesses Remaining: 15
+    </div>
+
+    <div id="losses">
+        Number of Losses: 0
+    </div>
+    <div id="wins">
+        Number of Wins: 0
+    </div>
 
 
     <script type="text/javascript">
@@ -24,11 +36,9 @@
         let numberOfWins = 0;
         let numberOfGuesses = 15;
 
-        // TODO: Give the user directions. 
-        var text = document.getElementById("game");
-        text.textContent = "Are you smarter than an Intel Processor? <br> Guess the character the computer guesses to win.";
 
-        
+
+
         //code for loop to reset game after tries run out
         //log user guess and coputer guess for each round
 
@@ -41,7 +51,7 @@
             var userGuess = event.key;
             // Randomly chooses a choice from the options array. This is the Computer's guess.
             var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            
+
 
             if (userGuess !== computerGuess) {
                 numberOfLosses++;
@@ -52,8 +62,9 @@
                 losses.textContent = "Number of Losses: " + numberOfLosses;
                 var guesses = document.getElementById("guesses");
                 guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
-                if(numberOfGuesses === 0){
-
+                if (numberOfGuesses === 0) {
+                    numberOfGuesses = 15;
+                    numberOfLosses = 0;
                 }
             }
 
@@ -66,8 +77,9 @@
                 wins.textContent = "Number of Wins: " + numberOfWins;
                 var guesses = document.getElementById("guesses");
                 guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
-                if(numberOfGuesses === 0){
-                    
+                if (numberOfGuesses === 0) {
+                    numberOfGuesses = 15;
+                    numberOfWins = 0;
                 }
             }
 
