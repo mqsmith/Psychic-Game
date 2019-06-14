@@ -17,14 +17,19 @@
     </div>
 
     <div id="guesses">
-        Number of Guesses Remaining: 15
+        <p>Number of Guesses Remaining: 15</p>
+    </div>
+
+    <div id="soFar">
+        <p>Your Guesses so far: </p>
     </div>
 
     <div id="losses">
-        Number of Losses: 0
+        <p>Number of Losses: 0</p>
     </div>
+
     <div id="wins">
-        Number of Wins: 0
+        <p>Number of Wins: 0</p>
     </div>
 
 
@@ -32,6 +37,7 @@
 
         // Creates an array that lists out all of the options the computer could choose.
         var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var guessesSoFar = [];
         let numberOfLosses = 0;
         let numberOfWins = 0;
         let numberOfGuesses = 15;
@@ -62,9 +68,18 @@
                 losses.textContent = "Number of Losses: " + numberOfLosses;
                 var guesses = document.getElementById("guesses");
                 guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
+                var remaining = document.getElementById("soFar");
+                remaining.textContent = function addGuesses() {
+                    guessesSoFar.push(userGuess);
+                    document.getElementById("soFar").innerHTML = guessesSoFar;
+                }
+                // var remaining = document.getElementById("soFar");
+                // remaining.textContent = "Your Guesses so Far: " + guessesSoFar.push(userGuess);
                 if (numberOfGuesses === 0) {
-                    numberOfGuesses = 15;
-                    numberOfLosses = 0;
+                    alert("Game Over!");
+                    let numberOfGuesses = 15;
+                    let numberOfLosses = 0;
+                    let numberOfWins = 0;
                 }
             }
 
@@ -77,11 +92,22 @@
                 wins.textContent = "Number of Wins: " + numberOfWins;
                 var guesses = document.getElementById("guesses");
                 guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
+                var remaining = document.getElementById("soFar");
+                remaining.textContent = function addGuesses() {
+                    guessesSoFar.push(userGuess);
+                    document.getElementById("soFar").innerHTML = guessesSoFar;
+                }
+
+
                 if (numberOfGuesses === 0) {
-                    numberOfGuesses = 15;
-                    numberOfWins = 0;
+                    alert("Game Over!");
+                    let numberOfGuesses = 15;
+                    let numberOfLosses = 0;
+                    let numberOfWins = 0;
                 }
             }
+
+
 
 
 
