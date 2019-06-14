@@ -68,19 +68,19 @@
                 losses.textContent = "Number of Losses: " + numberOfLosses;
                 var guesses = document.getElementById("guesses");
                 guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
-                var remaining = document.getElementById("soFar");
-                remaining.textContent = function addGuesses() {
-                    guessesSoFar.push(userGuess);
-                    document.getElementById("soFar").innerHTML = guessesSoFar;
-                }
+                // var remaining = document.getElementById("soFar");
+                // remaining.textContent = function addGuesses() {
+                //     guessesSoFar.push(userGuess);
+                //     document.getElementById("soFar").innerHTML = guessesSoFar;
+                // };
                 // var remaining = document.getElementById("soFar");
                 // remaining.textContent = "Your Guesses so Far: " + guessesSoFar.push(userGuess);
                 if (numberOfGuesses === 0) {
                     alert("Game Over!");
-                    let numberOfGuesses = 15;
-                    let numberOfLosses = 0;
-                    let numberOfWins = 0;
-                }
+                    numberOfGuesses = 15;
+                    numberOfLosses = 0;
+                    numberOfWins = 0;
+                };
             }
 
             if (userGuess === computerGuess) {
@@ -92,19 +92,17 @@
                 wins.textContent = "Number of Wins: " + numberOfWins;
                 var guesses = document.getElementById("guesses");
                 guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
-                var remaining = document.getElementById("soFar");
-                remaining.textContent = function addGuesses() {
-                    guessesSoFar.push(userGuess);
-                    document.getElementById("soFar").innerHTML = guessesSoFar;
-                }
-
-
+                // var remaining = document.getElementById("soFar");
+                // remaining.textContent = function addGuesses() {
+                //     guessesSoFar.push(userGuess);
+                //     document.getElementById("soFar").innerHTML = guessesSoFar;
+                // };
                 if (numberOfGuesses === 0) {
                     alert("Game Over!");
-                    let numberOfGuesses = 15;
-                    let numberOfLosses = 0;
-                    let numberOfWins = 0;
-                }
+                    numberOfGuesses = 15;
+                    numberOfLosses = 0;
+                    numberOfWins = 0;
+                };
             }
 
 
