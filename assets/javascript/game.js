@@ -33,18 +33,16 @@ document.onkeyup = function (event) {
         wins.textContent = "Number of Wins: " + numberOfWins;
         var guesses = document.getElementById("guesses");
         guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
-        // var remaining = document.getElementById("soFar");
-        // remaining.textContent = function addGuesses() {
-        //     guessesSoFar.push(userGuess);
-        //     document.getElementById("soFar").innerHTML = guessesSoFar;
-        // };
-        // var remaining = document.getElementById("soFar");
-        // remaining.textContent = "Your Guesses so Far: " + guessesSoFar.push(userGuess);
+        var remaining = document.getElementById("soFar");
+        remaining.textContent = "Your Guesses so Far: " + guessesSoFar;
+        console.log(guessesSoFar);
+        guessesSoFar.push(userGuess);
         if (numberOfGuesses === 0) {
             alert("Game Over!");
             numberOfGuesses = 15;
             numberOfLosses = 0;
             numberOfWins = 0;
+            guessesSoFar = [];
         };
     }
 
@@ -59,16 +57,16 @@ document.onkeyup = function (event) {
         wins.textContent = "Number of Wins: " + numberOfWins;
         var guesses = document.getElementById("guesses");
         guesses.textContent = "Number of Guesses Remaining: " + numberOfGuesses;
-        // var remaining = document.getElementById("soFar");
-        // remaining.textContent = function addGuesses() {
-        //     guessesSoFar.push(userGuess);
-        //     document.getElementById("soFar").innerHTML = guessesSoFar;
-        // };
+        var remaining = document.getElementById("soFar");
+        remaining.textContent = "Your Guesses so Far: " + guessesSoFar;
+        console.log(guessesSoFar);
+        guessesSoFar.push(userGuess);
         if (numberOfGuesses === 0) {
             alert("Game Over!");
             numberOfGuesses = 15;
             numberOfLosses = 0;
             numberOfWins = 0;
+            guessesSoFar = [];
         };
     }
 
